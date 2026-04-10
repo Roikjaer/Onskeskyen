@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Rediger ønske</title>
+</head>
+<body>
+
+<h1>Rediger ønske</h1>
+
+<form method="post" action="/wishes/edit">
+
+    <input type="hidden" name="id" th:value="${wish.id}">
+
+    <input type="text" name="text" th:value="${wish.text}" required>
+
+    <button type="submit">Gem</button>
+</form>
+
+<a href="/wishes">Tilbage</a>
+
+</body>
+</html>

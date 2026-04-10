@@ -4,11 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5352bb7b-c28a-40ec-8351-bd8ffe39e595" name="Changes" comment="t1">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
+    <list default="true" id="5352bb7b-c28a-40ec-8351-bd8ffe39e595" name="Changes" comment="t2">
+      <change afterPath="$PROJECT_DIR$/Onskeskyen.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Configs/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Controller/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Models/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Models/Wish.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Repos/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Repos/WishRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Services/DetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/editWish.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/wishes.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Wish.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Wishlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Models/Wishlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/onskeskyen/OnskeskyenApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/application.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +38,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -55,6 +75,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "Application.OnskeskyenApplication.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JUnit.OnskeskyenApplicationTests.executor": "Run",
     "Maven.Onskeskyen [clean].executor": "Run",
     "Maven.Onskeskyen [install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
@@ -65,6 +88,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.OnskeskyenApplication.executor": "Run",
+    "Spring Boot.Run.executor": "Run",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
@@ -87,31 +111,61 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\grans\IdeaProjects\Onskeskyen1\src\main\java\com\example\onskeskyen" />
+      <recent name="C:\Users\grans\IdeaProjects\Onskeskyen1\src\main\resources\templates" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.onskeskyen" />
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RunManager" selected="Spring Boot.Run">
+    <configuration name="OnskeskyenApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+      <envs>
+        <env name="DB_USER" value="adminLogin" />
+        <env name="DB_PASSWORD" value="Test1234" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="com.example.onskeskyen.OnskeskyenApplication" />
       <module name="Onskeskyen" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OnskeskyenApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <configuration name="OnskeskyenApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Onskeskyen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.onskeskyen.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.onskeskyen" />
+      <option name="MAIN_CLASS_NAME" value="com.example.onskeskyen.OnskeskyenApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Run" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <envs>
+        <env name="DB_USER" value="adminLogin" />
+        <env name="DB_PASSWORD" value="Test1234" />
+      </envs>
       <module name="Onskeskyen" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.onskeskyen.OnskeskyenApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.OnskeskyenApplication" />
+      <item itemvalue="JUnit.OnskeskyenApplicationTests" />
+      <item itemvalue="Spring Boot.Run" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.OnskeskyenApplicationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -132,7 +186,7 @@
       <updated>1775636740574</updated>
       <workItem from="1775636743823" duration="146000" />
       <workItem from="1775638732468" duration="1705000" />
-      <workItem from="1775721582177" duration="7604000" />
+      <workItem from="1775721582177" duration="23267000" />
     </task>
     <task id="LOCAL-00001" summary="t1">
       <option name="closed" value="true" />
@@ -150,14 +204,48 @@
       <option name="project" value="LOCAL" />
       <updated>1775737719103</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="t2">
+      <option name="closed" value="true" />
+      <created>1775811023856</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1775811023856</updated>
+    </task>
+    <task id="LOCAL-00004" summary="t2">
+      <option name="closed" value="true" />
+      <created>1775811033456</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1775811033456</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="t1" />
-    <option name="LAST_COMMIT_MESSAGE" value="t1" />
+    <MESSAGE value="t2" />
+    <option name="LAST_COMMIT_MESSAGE" value="t2" />
   </component>
 </project>

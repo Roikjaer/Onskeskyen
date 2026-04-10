@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+</head>
+<body>
+
+<h1>Login</h1>
+
+<p th:if="${param.error}" style="color:red;">
+    Login fejlede – tjek email/password
+</p>
+
+<form method="post" action="/login">
+    <input type="text" name="username" placeholder="Email" required>
+    <input type="password" name="password" required>
+    <button type="submit">Login</button>
+</form>
+
+<a href="/register">Opret bruger</a>
+
+</body>
+</html>

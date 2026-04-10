@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mine ønsker</title>
+</head>
+<body>
+
+<h1>Mine ønsker</h1>
+
+<!-- LOGOUT -->
+<form method="post" action="/logout">
+    <button type="submit">Logout</button>
+</form>
+
+<hr>
+
+<!-- ADD WISH -->
+<h3>Tilføj ønske</h3>
+<form method="post" action="/wishes">
+    <input type="text" name="text" placeholder="Nyt ønske" required>
+    <button type="submit">Tilføj</button>
+</form>
+
+<hr>
+
+<!-- LIST WISHES -->
+<ul>
+    <li th:each="w : ${wishes}">
+
+        <span th:text="${w.text}"></span>
+
+        <!-- EDIT -->
+        <a th:href="@{/wishes/edit(id=${w.id})}">
+            Edit
+        </a>
+
+        <!-- DELETE -->
+        <form method="post" action="/wishes/delete" style="display:inline;">
+            <input type="hidden" name="id" th:value="${w.id}">
+            <button>Delete</button>
+        </form>
+
+    </li>
+</ul>
+
+</body>
+</html>
