@@ -1,3 +1,5 @@
+package Models;
+
 class Wish {
     private String name;
     private String description;
