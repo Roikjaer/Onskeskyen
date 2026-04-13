@@ -4,30 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5352bb7b-c28a-40ec-8351-bd8ffe39e595" name="Changes" comment="t2">
-      <change afterPath="$PROJECT_DIR$/Onskeskyen.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Configs/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Models/Wish.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Repos/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Repos/WishRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Services/DetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Services/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/editWish.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/wishes.html" afterDir="false" />
+    <list default="true" id="5352bb7b-c28a-40ec-8351-bd8ffe39e595" name="Changes" comment="Kæmpe_Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Wish.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Wishlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Models/Wishlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/onskeskyen/OnskeskyenApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/application.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +164,7 @@
       <updated>1775636740574</updated>
       <workItem from="1775636743823" duration="146000" />
       <workItem from="1775638732468" duration="1705000" />
-      <workItem from="1775721582177" duration="23267000" />
+      <workItem from="1775721582177" duration="25845000" />
     </task>
     <task id="LOCAL-00001" summary="t1">
       <option name="closed" value="true" />
@@ -220,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775811033456</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Kæmpe_Update">
+      <option name="closed" value="true" />
+      <created>1775832213458</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1775832213458</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,6 +232,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="t1" />
     <MESSAGE value="t2" />
-    <option name="LAST_COMMIT_MESSAGE" value="t2" />
+    <MESSAGE value="Kæmpe_Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kæmpe_Update" />
   </component>
 </project>
