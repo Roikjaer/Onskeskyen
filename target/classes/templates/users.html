@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Find ønskelister</title>
+</head>
+<body>
+
+<h1>Find ønskelister</h1>
+
+<a href="/wishes">← Tilbage til mine ønsker</a>
+
+<hr>
+
+<!-- SEARCH -->
+<form method="get" action="/users">
+    <input type="text" name="search" th:value="${search}" placeholder="Søg efter navn...">
+    <button type="submit">Søg</button>
+</form>
+
+<hr>
+
+<!-- USER LIST -->
+<div th:if="${users.isEmpty()}">
+    <p>Ingen brugere fundet.</p>
+</div>
+
+<ul th:if="${!users.isEmpty()}">
+    <li th:each="u : ${users}">
+        <a th:href="@{/users/{id}/wishlists(id=${u.id})}">
+            <span th:text="${u.name}"></span>
+        </a>
+        <span style="color: gray;" th:text="' (' + ${u.email} + ')'"></span>
+    </li>
+</ul>
+
+</body>
+</html>
