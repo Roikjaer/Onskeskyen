@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title th:text="${profileUser.name} + 's ønskelister'">Ønskelister</title>
+    <title>Ønskelister</title>
+    <style>
+        body { margin:0; font-family:Arial; background:#e0f7ff; }
+        header { background:#0f6f8f; color:white; padding:15px; }
+        .container { padding:20px; }
+        .card { background:white; padding:10px; border-radius:8px; margin-bottom:8px; }
+    </style>
 </head>
 <body>
 
-<h1 th:text="${profileUser.name} + 's ønskelister'">Ønskelister</h1>
+<header>☁️ Ønskeskyen</header>
 
-<a href="/users">← Tilbage til brugere</a>
+<div class="container">
 
-<hr>
+    <h1 th:text="${profileUser.name} + 's ønskelister'"></h1>
 
-<div th:if="${wishlists.isEmpty()}">
-    <p>Denne bruger har ingen ønskelister endnu.</p>
-</div>
+    <a href="/users">← Tilbage</a>
 
-<ul th:if="${!wishlists.isEmpty()}">
-    <li th:each="wl : ${wishlists}" style="margin-bottom: 8px;">
+    <div th:each="wl : ${wishlists}" class="card">
         <a th:href="@{/wishlist/{id}(id=${wl.id})}">
             <span th:text="${wl.name}"></span>
         </a>
-        <span style="color: gray;" th:text="' (' + ${wl.wishes.size()} + ' ønske(r))'"></span>
-    </li>
-</ul>
+        (<span th:text="${wl.wishes.size()}"></span>)
+    </div>
 
+</div>
 </body>
 </html>

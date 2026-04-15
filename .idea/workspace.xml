@@ -5,27 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5352bb7b-c28a-40ec-8351-bd8ffe39e595" name="Changes" comment="Kæmpe_Update3">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Repos/WishlistRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/myWishlist.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/sharedWishes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/sharedWishlist.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/userWishes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/userWishlists.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Configs/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Configs/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Models/Wish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Models/Wish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Models/Wishlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Models/Wishlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Repos/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Repos/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Repos/WishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Repos/WishRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editWish.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editWish.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/myWishlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/myWishlist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sharedWishes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sharedWishlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/sharedWishlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userWishes.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userWishes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userWishlists.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userWishlists.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/users.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/wishes.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/wishes.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/editWish.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/editWish.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/myWishlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/myWishlist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/sharedWishes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/sharedWishlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/sharedWishlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/userWishes.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/userWishes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/userWishlists.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/userWishlists.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/users.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/wishes.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/wishes.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,12 +49,12 @@
     &quot;assignee&quot;: &quot;Roikjaer&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Roikjaer/Onskeskyen.git",
-    "accountId": "274fbd08-5df0-4714-bd63-b0367e3a2a30"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Roikjaer/Onskeskyen.git&quot;,
+    &quot;accountId&quot;: &quot;274fbd08-5df0-4714-bd63-b0367e3a2a30&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -71,43 +70,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.OnskeskyenApplication.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JUnit.OnskeskyenApplicationTests.executor": "Run",
-    "Maven.Onskeskyen [clean].executor": "Run",
-    "Maven.Onskeskyen [install].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.OnskeskyenApplication.executor": "Run",
-    "Spring Boot.Run.executor": "Run",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/maltheroikjaer/IdeaProjects/Onskeskyen",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "ml.llm.AIAssistantPromptsLibrary",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.OnskeskyenApplication.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JUnit.OnskeskyenApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Onskeskyen [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Onskeskyen [install].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.OnskeskyenApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.Run.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/maltheroikjaer/IdeaProjects/Onskeskyen&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.AIAssistantPromptsLibrary&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\grans\IdeaProjects\Onskeskyen1\src\main\java\com\example\onskeskyen" />

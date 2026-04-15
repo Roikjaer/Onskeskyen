@@ -2,36 +2,40 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Find ønskelister</title>
+    <style>
+        body { margin:0; font-family:Arial; background:#e0f7ff; }
+        header { background:#0f6f8f; color:white; padding:15px; }
+        .container { padding:20px; }
+        .card { background:white; padding:10px; border-radius:8px; margin-bottom:8px; }
+        button { background:#0f6f8f; color:white; border:none; padding:5px 10px; }
+    </style>
 </head>
 <body>
 
-<h1>Find ønskelister</h1>
+<header>☁️ Ønskeskyen</header>
 
-<a href="/wishes">← Tilbage til mine ønsker</a>
+<div class="container">
 
-<hr>
+    <h1>Find ønskelister</h1>
 
-<!-- SEARCH -->
-<form method="get" action="/users">
-    <input type="text" name="search" th:value="${search}" placeholder="Søg efter navn...">
-    <button type="submit">Søg</button>
-</form>
+    <a href="/wishes">← Tilbage</a>
 
-<hr>
+    <form method="get" action="/users" class="card">
+        <input type="text" name="search" placeholder="Søg...">
+        <button>Søg</button>
+    </form>
 
-<!-- USER LIST -->
-<div th:if="${users.isEmpty()}">
-    <p>Ingen brugere fundet.</p>
-</div>
+    <div th:if="${users.isEmpty()}" class="card">
+        Ingen brugere
+    </div>
 
-<ul th:if="${!users.isEmpty()}">
-    <li th:each="u : ${users}">
+    <div th:each="u : ${users}" class="card">
         <a th:href="@{/users/{id}/wishlists(id=${u.id})}">
             <span th:text="${u.name}"></span>
         </a>
-        <span style="color: gray;" th:text="' (' + ${u.email} + ')'"></span>
-    </li>
-</ul>
+        (<span th:text="${u.email}"></span>)
+    </div>
 
+</div>
 </body>
 </html>

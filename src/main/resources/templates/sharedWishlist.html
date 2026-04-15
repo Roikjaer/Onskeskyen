@@ -1,79 +1,82 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title th:text="${profileUser.name} + 's ønskeliste'">Ønskeliste</title>
+    <title th:text="${profileUser.name} + 's ønskeliste'"></title>
+    <style>
+        body { margin:0; font-family:Arial; background:linear-gradient(#1ca9c9,#e0f7ff); }
+        header { background:#0f6f8f; color:white; padding:15px; }
+        .container { padding:20px; }
+        .card { background:white; padding:12px; border-radius:10px; margin-bottom:10px; }
+        button { background:#0f6f8f; color:white; border:none; padding:6px 10px; border-radius:8px; }
+    </style>
 </head>
 <body>
 
-<h1 th:text="${wishlist.name}">Ønskeliste</h1>
-<p>Af <span th:text="${profileUser.name}"></span></p>
+<header>☁️ Ønskeskyen</header>
 
-<a href="/users">← Find flere ønskelister</a>
+<div class="container">
 
-<hr>
+    <h1 th:text="${wishlist.name}"></h1>
+    <p>Af <span th:text="${profileUser.name}"></span></p>
 
-<!-- Owner sees their own list without reservation info -->
-<div th:if="${isOwner}">
-    <p style="color: gray;">Du ser din egen ønskeliste. Du kan ikke se reservationer.</p>
-    <ul>
-        <li th:each="w : ${wishes}">
+    <a href="/users">← Find flere ønskelister</a>
+
+    <hr>
+
+    <div th:if="${isOwner}" class="card">
+        <p style="color: gray;">Du ser din egen ønskeliste.</p>
+
+        <div th:each="w : ${wishes}" class="card">
             <span th:text="${w.text}"></span>
-        </li>
-    </ul>
-</div>
-
-<!-- Other users see reservation status -->
-<div th:if="${!isOwner}">
-
-    <div th:if="${wishes.isEmpty()}">
-        <p>Denne ønskeliste har ingen ønsker endnu.</p>
+        </div>
     </div>
 
-    <ul th:if="${!wishes.isEmpty()}">
-        <li th:each="w : ${wishes}" style="margin-bottom: 10px;">
+    <div th:if="${!isOwner}">
+
+        <div th:if="${wishes.isEmpty()}" class="card">
+            <p>Ingen ønsker endnu.</p>
+        </div>
+
+        <div th:each="w : ${wishes}" class="card">
 
             <span th:text="${w.text}"></span>
 
-            <!-- Logged in user: show reserve/unreserve -->
-            <span th:if="${currentUser != null}">
+            <div th:if="${currentUser != null}">
 
-                <!-- Reserved by current user -->
-                <span th:if="${w.reserved and w.reservedBy.id == currentUser.id}">
-                    <strong style="color: green;">✅ Du har reserveret dette</strong>
-                    <form method="post" action="/wishes/unreserve" style="display:inline;">
+                <div th:if="${w.reserved and w.reservedBy.id == currentUser.id}">
+                    <strong style="color:green;">✅ Du har reserveret</strong>
+                    <form method="post" action="/wishes/unreserve">
                         <input type="hidden" name="id" th:value="${w.id}">
                         <input type="hidden" name="wishlistId" th:value="${wishlist.id}">
-                        <button type="submit">Fortryd reservation</button>
+                        <button>Fortryd</button>
                     </form>
-                </span>
+                </div>
 
-                <!-- Reserved by someone else -->
-                <span th:if="${w.reserved and w.reservedBy.id != currentUser.id}" style="color: orange;">
+                <div th:if="${w.reserved and w.reservedBy.id != currentUser.id}">
                     🔒 Allerede reserveret
-                </span>
+                </div>
 
-                <!-- Not reserved -->
-                <span th:if="${!w.reserved}">
-                    <form method="post" action="/wishes/reserve" style="display:inline;">
+                <div th:if="${!w.reserved}">
+                    <form method="post" action="/wishes/reserve">
                         <input type="hidden" name="id" th:value="${w.id}">
                         <input type="hidden" name="wishlistId" th:value="${wishlist.id}">
-                        <button type="submit">🎁 Reservér</button>
+                        <button>🎁 Reservér</button>
                     </form>
-                </span>
+                </div>
 
-            </span>
+            </div>
 
-            <!-- Not logged in -->
-            <span th:if="${currentUser == null and w.reserved}" style="color: orange;">
+            <div th:if="${currentUser == null and w.reserved}">
                 🔒 Allerede reserveret
-            </span>
-            <span th:if="${currentUser == null and !w.reserved}" style="color: gray;">
-                (<a href="/login">Log ind</a> for at reservere)
-            </span>
+            </div>
 
-        </li>
-    </ul>
+            <div th:if="${currentUser == null and !w.reserved}">
+                (<a href="/login">Log ind</a>)
+            </div>
+
+        </div>
+    </div>
+
 </div>
-
 </body>
 </html>

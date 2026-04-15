@@ -2,68 +2,65 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Mine ønskelister</title>
+    <style>
+        body { margin:0; font-family:Arial; background:#e0f7ff; }
+        header { background:#0f6f8f; color:white; padding:15px; display:flex; justify-content:space-between; }
+        .container { padding:20px; }
+        .card { background:white; padding:12px; border-radius:10px; margin-bottom:10px; }
+        button { background:#0f6f8f; color:white; border:none; padding:6px 10px; }
+    </style>
 </head>
 <body>
 
-<h1>Mine ønskelister</h1>
+<header>
+    ☁️ Ønskeskyen
 
-<!-- NAVIGATION -->
-<a href="/users">🔍 Find andre ønskelister</a>
+    <div>
+        <a href="#" onclick="alert('Nicolai er den varmeste løve 🦁')"
+           style="color:white; margin-right:15px; text-decoration:none;">
+            .
+        </a>
 
-<!-- LOGOUT -->
-<form method="post" action="/logout" style="display:inline; margin-left: 10px;">
-    <button type="submit">Logout</button>
-</form>
+        <form method="post" action="/logout" style="display:inline;">
+            <button>Logout</button>
+        </form>
+    </div>
+</header>
 
-<hr>
+<div class="container">
 
-<!-- CREATE NEW WISHLIST -->
-<h3>Opret ny ønskeliste</h3>
-<form method="post" action="/wishlists/create">
-    <input type="text" name="name" placeholder="Navn på ønskeliste" required>
-    <button type="submit">Opret</button>
-</form>
+    <h2>Mine ønskelister</h2>
 
-<hr>
+    <a href="/users">🔍 Find andre</a>
 
-<!-- LIST OF WISHLISTS -->
-<div th:if="${wishlists.isEmpty()}">
-    <p>Du har ingen ønskelister endnu. Opret en ovenfor!</p>
-</div>
-
-<div th:each="wl : ${wishlists}" style="border: 1px solid #ccc; padding: 12px; margin-bottom: 12px; border-radius: 6px;">
-
-    <h3 th:text="${wl.name}"></h3>
-
-    <a th:href="@{/wishlists/{id}(id=${wl.id})}">📝 Rediger ønsker</a>
-    &nbsp;|&nbsp;
-
-    <!-- Shareable link -->
-    <span>🔗 Delelink: </span>
-    <code th:text="'/wishlist/' + ${wl.id}"></code>
-
-    &nbsp;|&nbsp;
-
-    <!-- Delete wishlist -->
-    <form method="post" action="/wishlists/delete" style="display:inline;">
-        <input type="hidden" name="id" th:value="${wl.id}">
-        <button type="submit" onclick="return confirm('Er du sikker?')">🗑 Slet</button>
+    <form method="post" action="/wishlists/create" class="card">
+        <input type="text" name="name" placeholder="Navn" required>
+        <button>Opret</button>
     </form>
 
-    <p style="color: gray;" th:text="${wl.wishes.size()} + ' ønske(r)'"></p>
-</div>
+    <div th:each="wl : ${wishlists}" class="card">
 
-<!-- WISHES I HAVE RESERVED FOR OTHERS -->
-<hr>
-<h3>Ønsker jeg har reserveret</h3>
-<ul th:if="${!reservedWishes.isEmpty()}">
-    <li th:each="rw : ${reservedWishes}">
+        <h3 th:text="${wl.name}"></h3>
+
+        <a th:href="@{/wishlists/{id}(id=${wl.id})}">Åbn</a>
+
+        <form method="post" action="/wishlists/delete">
+            <input type="hidden" name="id" th:value="${wl.id}">
+            <button>🗑</button>
+        </form>
+
+    </div>
+
+    <hr>
+
+    <h3>Reserverede ønsker</h3>
+
+    <div th:each="rw : ${reservedWishes}" class="card">
         <span th:text="${rw.text}"></span>
-        — til <span th:text="${rw.user.name}"></span>
-        (<span th:text="${rw.user.email}"></span>)
-    </li>
-</ul>
-<p th:if="${reservedWishes.isEmpty()}">Du har ikke reserveret nogen ønsker endnu.</p>
+        — <span th:text="${rw.user.name}"></span>
+    </div>
+
+</div>
 
 </body>
 </html>

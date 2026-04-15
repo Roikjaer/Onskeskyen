@@ -1,23 +1,31 @@
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Rediger ønske</title>
+    <style>
+        body { margin:0; font-family:Arial; background:linear-gradient(#1ca9c9,#e0f7ff); }
+        header { background:#0f6f8f; color:white; padding:15px; }
+        .container { padding:20px; text-align:center; }
+        .card { background:white; padding:20px; border-radius:10px; display:inline-block; }
+        button { background:#0f6f8f; color:white; border:none; padding:8px 15px; border-radius:10px; }
+    </style>
 </head>
 <body>
 
-<h1>Rediger ønske</h1>
+<header>☁️ Ønskeskyen</header>
 
-<form method="post" action="/wishes/edit">
+<div class="container">
+    <h1>Rediger ønske</h1>
 
-    <input type="hidden" name="id" th:value="${wish.id}">
+    <form method="post" action="/wishes/edit" class="card">
+        <input type="hidden" name="id" th:value="${wish.id}">
+        <input type="text" name="text" th:value="${wish.text}" required><br><br>
+        <button type="submit">Gem</button>
+    </form>
 
-    <input type="text" name="text" th:value="${wish.text}" required>
-
-    <button type="submit">Gem</button>
-</form>
-
-<a th:href="@{/wishlists/{id}(id=${wish.wishlist.id})}">Tilbage</a>
+    <br><br>
+    <a th:href="@{/wishlists/{id}(id=${wish.wishlist.id})}">Tilbage</a>
+</div>
 
 </body>
 </html>

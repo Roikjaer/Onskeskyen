@@ -2,47 +2,43 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title th:text="${wishlist.name}">Ønskeliste</title>
+    <style>
+        body { margin:0; font-family:Arial; background:#e0f7ff; }
+        header { background:#0f6f8f; color:white; padding:15px; }
+        .container { padding:20px; }
+        .card { background:white; padding:12px; border-radius:10px; margin-bottom:10px; }
+        button { background:#0f6f8f; color:white; border:none; padding:6px 10px; border-radius:8px; }
+    </style>
 </head>
 <body>
 
-<h1 th:text="${wishlist.name}">Ønskeliste</h1>
+<header>☁️ Ønskeskyen</header>
 
-<a href="/wishes">← Tilbage til mine ønskelister</a>
+<div class="container">
 
-<p>🔗 Del denne ønskeliste med linket: <code th:text="'/wishlist/' + ${wishlist.id}"></code></p>
+    <h1 th:text="${wishlist.name}"></h1>
 
-<hr>
+    <a href="/wishes">← Tilbage</a>
 
-<!-- ADD WISH -->
-<h3>Tilføj ønske</h3>
-<form method="post" th:action="@{/wishlists/{id}/add(id=${wishlist.id})}">
-    <input type="text" name="text" placeholder="Nyt ønske" required>
-    <button type="submit">Tilføj</button>
-</form>
+    <p>🔗 <code th:text="'/wishlist/' + ${wishlist.id}"></code></p>
 
-<hr>
+    <form method="post" th:action="@{/wishlists/{id}/add(id=${wishlist.id})}" class="card">
+        <input type="text" name="text" placeholder="Nyt ønske" required>
+        <button>Tilføj</button>
+    </form>
 
-<!-- LIST WISHES (NO reservation status shown!) -->
-<div th:if="${wishes.isEmpty()}">
-    <p>Ingen ønsker endnu. Tilføj et ovenfor!</p>
-</div>
-
-<ul>
-    <li th:each="w : ${wishes}" style="margin-bottom: 6px;">
-
+    <div th:each="w : ${wishes}" class="card">
         <span th:text="${w.text}"></span>
 
-        <!-- EDIT -->
         <a th:href="@{/wishes/edit(id=${w.id})}">Edit</a>
 
-        <!-- DELETE -->
         <form method="post" action="/wishes/delete" style="display:inline;">
             <input type="hidden" name="id" th:value="${w.id}">
             <button>Delete</button>
         </form>
+    </div>
 
-    </li>
-</ul>
+</div>
 
 </body>
 </html>
