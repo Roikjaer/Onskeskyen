@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -16,7 +17,7 @@
     <button type="submit">Gem</button>
 </form>
 
-<a href="/wishes">Tilbage</a>
+<a th:href="@{/wishlists/{id}(id=${wish.wishlist.id})}">Tilbage</a>
 
 </body>
 </html>

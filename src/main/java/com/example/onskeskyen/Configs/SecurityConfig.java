@@ -19,14 +19,19 @@ public class SecurityConfig {
         this.detailsService = detailsService;
     }
 
+
+
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(csrf -> csrf.disable())
                 .userDetailsService(detailsService)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/login", "/register").permitAll()
+                        .requestMatchers("/login", "/register", "/wishlist/**").permitAll()
                         .anyRequest().authenticated()
+
+
                 )
                 .formLogin(form -> form
                         .loginPage("/login")

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${profileUser.name} + 's ønskeliste'">Ønskeliste</title>
+</head>
+<body>
+
+<h1 th:text="${wishlist.name}">Ønskeliste</h1>
+<p>Af <span th:text="${profileUser.name}"></span></p>
+
+<a href="/users">← Find flere ønskelister</a>
+
+<hr>
+
+<!-- Owner sees their own list without reservation info -->
+<div th:if="${isOwner}">
+    <p style="color: gray;">Du ser din egen ønskeliste. Du kan ikke se reservationer.</p>
+    <ul>
+        <li th:each="w : ${wishes}">
+            <span th:text="${w.text}"></span>
+        </li>
+    </ul>
+</div>
+
+<!-- Other users see reservation status -->
+<div th:if="${!isOwner}">
+
+    <div th:if="${wishes.isEmpty()}">
+        <p>Denne ønskeliste har ingen ønsker endnu.</p>
+    </div>
+
+    <ul th:if="${!wishes.isEmpty()}">
+        <li th:each="w : ${wishes}" style="margin-bottom: 10px;">
+
+            <span th:text="${w.text}"></span>
+
+            <!-- Logged in user: show reserve/unreserve -->
+            <span th:if="${currentUser != null}">
+
+                <!-- Reserved by current user -->
+                <span th:if="${w.reserved and w.reservedBy.id == currentUser.id}">
+                    <strong style="color: green;">✅ Du har reserveret dette</strong>
+                    <form method="post" action="/wishes/unreserve" style="display:inline;">
+                        <input type="hidden" name="id" th:value="${w.id}">
+                        <input type="hidden" name="wishlistId" th:value="${wishlist.id}">
+                        <button type="submit">Fortryd reservation</button>
+                    </form>
+                </span>
+
+                <!-- Reserved by someone else -->
+                <span th:if="${w.reserved and w.reservedBy.id != currentUser.id}" style="color: orange;">
+                    🔒 Allerede reserveret
+                </span>
+
+                <!-- Not reserved -->
+                <span th:if="${!w.reserved}">
+                    <form method="post" action="/wishes/reserve" style="display:inline;">
+                        <input type="hidden" name="id" th:value="${w.id}">
+                        <input type="hidden" name="wishlistId" th:value="${wishlist.id}">
+                        <button type="submit">🎁 Reservér</button>
+                    </form>
+                </span>
+
+            </span>
+
+            <!-- Not logged in -->
+            <span th:if="${currentUser == null and w.reserved}" style="color: orange;">
+                🔒 Allerede reserveret
+            </span>
+            <span th:if="${currentUser == null and !w.reserved}" style="color: gray;">
+                (<a href="/login">Log ind</a> for at reservere)
+            </span>
+
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

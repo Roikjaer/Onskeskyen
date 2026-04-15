@@ -5,8 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5352bb7b-c28a-40ec-8351-bd8ffe39e595" name="Changes" comment="Kæmpe_Update3">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Repos/WishlistRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/myWishlist.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/sharedWishes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/sharedWishlist.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/userWishes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/userWishlists.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Configs/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Configs/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Models/Wish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Models/Wish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Models/Wishlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Models/Wishlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Repos/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Repos/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Repos/WishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Repos/WishRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editWish.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editWish.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/wishes.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/wishes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/editWish.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/editWish.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/wishes.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/wishes.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +53,7 @@
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/Roikjaer/Onskeskyen.git",
-    "accountId": "89ca0cfb-71db-4efe-b009-8ecb5864b08e"
+    "accountId": "274fbd08-5df0-4714-bd63-b0367e3a2a30"
   }
 }]]></component>
   <component name="MavenImportPreferences">
@@ -78,7 +98,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "settings.editor.selected.configurable": "ml.llm.AIAssistantPromptsLibrary",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   },
@@ -99,7 +119,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Run">
+  <component name="RunManager" selected="Application.OnskeskyenApplication">
     <configuration name="OnskeskyenApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <envs>
         <env name="DB_USER" value="adminLogin" />
@@ -151,8 +171,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28539.13" />
-        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28539.13" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
       </set>
     </attachedChunks>
   </component>
@@ -166,6 +186,7 @@
       <workItem from="1775636743823" duration="146000" />
       <workItem from="1775638732468" duration="1705000" />
       <workItem from="1775721582177" duration="29548000" />
+      <workItem from="1776241224675" duration="2760000" />
     </task>
     <task id="LOCAL-00001" summary="t1">
       <option name="closed" value="true" />
@@ -253,5 +274,9 @@
     <MESSAGE value="Kæmpe_Update2" />
     <MESSAGE value="Kæmpe_Update3" />
     <option name="LAST_COMMIT_MESSAGE" value="Kæmpe_Update3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -1,47 +1,69 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Mine ønsker</title>
+    <title>Mine ønskelister</title>
 </head>
 <body>
 
-<h1>Mine ønsker</h1>
+<h1>Mine ønskelister</h1>
+
+<!-- NAVIGATION -->
+<a href="/users">🔍 Find andre ønskelister</a>
 
 <!-- LOGOUT -->
-<form method="post" action="/logout">
+<form method="post" action="/logout" style="display:inline; margin-left: 10px;">
     <button type="submit">Logout</button>
 </form>
 
 <hr>
 
-<!-- ADD WISH -->
-<h3>Tilføj ønske</h3>
-<form method="post" action="/wishes">
-    <input type="text" name="text" placeholder="Nyt ønske" required>
-    <button type="submit">Tilføj</button>
+<!-- CREATE NEW WISHLIST -->
+<h3>Opret ny ønskeliste</h3>
+<form method="post" action="/wishlists/create">
+    <input type="text" name="name" placeholder="Navn på ønskeliste" required>
+    <button type="submit">Opret</button>
 </form>
 
 <hr>
 
-<!-- LIST WISHES -->
-<ul>
-    <li th:each="w : ${wishes}">
+<!-- LIST OF WISHLISTS -->
+<div th:if="${wishlists.isEmpty()}">
+    <p>Du har ingen ønskelister endnu. Opret en ovenfor!</p>
+</div>
 
-        <span th:text="${w.text}"></span>
+<div th:each="wl : ${wishlists}" style="border: 1px solid #ccc; padding: 12px; margin-bottom: 12px; border-radius: 6px;">
 
-        <!-- EDIT -->
-        <a th:href="@{/wishes/edit(id=${w.id})}">
-            Edit
-        </a>
+    <h3 th:text="${wl.name}"></h3>
 
-        <!-- DELETE -->
-        <form method="post" action="/wishes/delete" style="display:inline;">
-            <input type="hidden" name="id" th:value="${w.id}">
-            <button>Delete</button>
-        </form>
+    <a th:href="@{/wishlists/{id}(id=${wl.id})}">📝 Rediger ønsker</a>
+    &nbsp;|&nbsp;
 
+    <!-- Shareable link -->
+    <span>🔗 Delelink: </span>
+    <code th:text="'/wishlist/' + ${wl.id}"></code>
+
+    &nbsp;|&nbsp;
+
+    <!-- Delete wishlist -->
+    <form method="post" action="/wishlists/delete" style="display:inline;">
+        <input type="hidden" name="id" th:value="${wl.id}">
+        <button type="submit" onclick="return confirm('Er du sikker?')">🗑 Slet</button>
+    </form>
+
+    <p style="color: gray;" th:text="${wl.wishes.size()} + ' ønske(r)'"></p>
+</div>
+
+<!-- WISHES I HAVE RESERVED FOR OTHERS -->
+<hr>
+<h3>Ønsker jeg har reserveret</h3>
+<ul th:if="${!reservedWishes.isEmpty()}">
+    <li th:each="rw : ${reservedWishes}">
+        <span th:text="${rw.text}"></span>
+        — til <span th:text="${rw.user.name}"></span>
+        (<span th:text="${rw.user.email}"></span>)
     </li>
 </ul>
+<p th:if="${reservedWishes.isEmpty()}">Du har ikke reserveret nogen ønsker endnu.</p>
 
 </body>
 </html>
