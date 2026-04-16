@@ -2,29 +2,124 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Mine ønskelister</title>
+
     <style>
-        body { margin:0; font-family:Arial; background:#e0f7ff; }
-        header { background:#0f6f8f; color:white; padding:15px; display:flex; justify-content:space-between; }
-        .container { padding:20px; }
-        .card { background:white; padding:12px; border-radius:10px; margin-bottom:10px; }
-        button { background:#0f6f8f; color:white; border:none; padding:6px 10px; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(180deg, #dff6ff 0%, #f8fdff 100%);
+
+            background-image:
+                    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.6) 60px, transparent 61px),
+                    radial-gradient(circle at 70% 20%, rgba(255,255,255,0.5) 80px, transparent 81px),
+                    radial-gradient(circle at 50% 70%, rgba(255,255,255,0.4) 100px, transparent 101px);
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            color: #0f6f8f;
+            padding: 15px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* LOGO */
+        .logo {
+            text-decoration: none;
+            color: #0f6f8f;
+            font-weight: bold;
+            padding: 6px 10px;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+
+        .logo:hover {
+            background: rgba(79,195,220,0.25);
+            transform: scale(1.05);
+        }
+
+        /* LOGOUT */
+        .logout-btn {
+            background: linear-gradient(135deg, #4fc3dc, #0f6f8f);
+            color: white;
+            border: none;
+            padding: 7px 12px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .logout-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h2, h3 {
+            color: #0f6f8f;
+        }
+
+        a {
+            color: #0f6f8f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 12px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: linear-gradient(135deg, #4fc3dc, #0f6f8f);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: rgba(0,0,0,0.08);
+            margin: 20px 0;
+        }
     </style>
 </head>
+
 <body>
 
 <header>
-    ☁️ Ønskeskyen
+    <a href="/wishes" class="logo">☁️ Ønskeskyen</a>
 
-    <div>
-        <a href="#" onclick="alert('Nicolai er den varmeste løve 🦁')"
-           style="color:white; margin-right:15px; text-decoration:none;">
-            .
-        </a>
-
-        <form method="post" action="/logout" style="display:inline;">
-            <button>Logout</button>
-        </form>
-    </div>
+    <form method="post" action="/logout">
+        <button class="logout-btn">Logout</button>
+    </form>
 </header>
 
 <div class="container">
@@ -44,7 +139,7 @@
 
         <a th:href="@{/wishlists/{id}(id=${wl.id})}">Åbn</a>
 
-        <form method="post" action="/wishlists/delete">
+        <form method="post" action="/wishlists/delete" style="margin-top:10px;">
             <input type="hidden" name="id" th:value="${wl.id}">
             <button>🗑</button>
         </form>

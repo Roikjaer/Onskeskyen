@@ -1,44 +1,198 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title th:text="${wishlist.name}">Ønskeliste</title>
+    <title th:text="${wishlist.name}">Min ønskeliste</title>
+
     <style>
-        body { margin:0; font-family:Arial; background:#e0f7ff; }
-        header { background:#0f6f8f; color:white; padding:15px; }
-        .container { padding:20px; }
-        .card { background:white; padding:12px; border-radius:10px; margin-bottom:10px; }
-        button { background:#0f6f8f; color:white; border:none; padding:6px 10px; border-radius:8px; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(180deg, #dff6ff 0%, #f8fdff 100%);
+
+            background-image:
+                    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.7) 60px, transparent 61px),
+                    radial-gradient(circle at 70% 20%, rgba(255,255,255,0.5) 80px, transparent 81px),
+                    radial-gradient(circle at 50% 70%, rgba(255,255,255,0.4) 120px, transparent 121px);
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            font-weight: bold;
+            font-size: 20px;
+            color: #0f6f8f;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        /* LOGO */
+        .logo {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 10px;
+            color: #0f6f8f;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .logo:hover {
+            background: rgba(79,195,220,0.25);
+            transform: scale(1.03);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #0f6f8f;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #5a8a9a;
+            margin-bottom: 20px;
+        }
+
+        /* CARD */
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 18px;
+            border-radius: 18px;
+            margin: 12px auto;
+            max-width: 420px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            border-radius: 12px;
+            border: 1px solid #d0e6ee;
+            font-size: 14px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4fc3dc;
+        }
+
+        button {
+            background: linear-gradient(135deg, #4fc3dc, #0f6f8f);
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 14px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .wish-actions {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .delete-btn {
+            background: #d9534f;
+        }
+
+        .delete-btn:hover {
+            background: #c9302c;
+        }
+
+        a {
+            color: #0f6f8f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .top-link {
+            margin-bottom: 15px;
+        }
+
+        .empty {
+            color: #5a8a9a;
+            margin-top: 20px;
+        }
     </style>
 </head>
+
 <body>
 
-<header>☁️ Ønskeskyen</header>
+<header>
+    <a href="/wishes" class="logo">☁️ Ønskeskyen</a>
+</header>
 
 <div class="container">
 
     <h1 th:text="${wishlist.name}"></h1>
 
-    <a href="/wishes">← Tilbage</a>
+    <div class="subtitle">
+        Min ønskeliste
+    </div>
 
-    <p>🔗 <code th:text="'/wishlist/' + ${wishlist.id}"></code></p>
+    <div class="top-link">
+        <a href="/wishes">← Tilbage</a>
+    </div>
 
-    <form method="post" th:action="@{/wishlists/{id}/add(id=${wishlist.id})}" class="card">
-        <input type="text" name="text" placeholder="Nyt ønske" required>
-        <button>Tilføj</button>
+    <!-- ADD WISH -->
+    <form method="post"
+          th:action="@{/wishlists/{id}/add(id=${wishlist.id})}"
+          class="card">
+
+        <input type="text" name="text" placeholder="Tilføj nyt ønske" required>
+        <button type="submit">Tilføj</button>
+
     </form>
 
+    <!-- EMPTY -->
+    <div th:if="${wishes.isEmpty()}" class="empty">
+        Du har ingen ønsker endnu ☁️
+    </div>
+
+    <!-- WISH LIST -->
     <div th:each="w : ${wishes}" class="card">
-        <span th:text="${w.text}"></span>
 
-        <a th:href="@{/wishes/edit(id=${w.id})}">Edit</a>
+        <div th:text="${w.text}"></div>
 
-        <form method="post" action="/wishes/delete" style="display:inline;">
-            <input type="hidden" name="id" th:value="${w.id}">
-            <button>Delete</button>
-        </form>
+        <div class="wish-actions">
+
+            <a th:href="@{/wishes/edit(id=${w.id})}">Edit</a>
+
+            <form method="post" action="/wishes/delete">
+                <input type="hidden" name="id" th:value="${w.id}">
+                <button class="delete-btn" type="submit">Delete</button>
+            </form>
+
+        </div>
+
     </div>
 
 </div>
+
+</body>
+</html>
 
 </body>
 </html>

@@ -7,22 +7,20 @@
     <list default="true" id="5352bb7b-c28a-40ec-8351-bd8ffe39e595" name="Changes" comment="Kæmpe_Update3">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Repos/WishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Repos/WishRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editWish.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editWish.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/myWishlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/myWishlist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sharedWishes.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sharedWishlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/sharedWishlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userWishes.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userWishes.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userWishlists.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userWishlists.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/users.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/wishes.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/wishes.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/editWish.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/editWish.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/myWishlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/myWishlist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/sharedWishes.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/sharedWishlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/sharedWishlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/userWishes.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/userWishes.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/userWishlists.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/userWishlists.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/users.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/wishes.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/wishes.html" afterDir="false" />
@@ -49,12 +47,12 @@
     &quot;assignee&quot;: &quot;Roikjaer&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Roikjaer/Onskeskyen.git&quot;,
-    &quot;accountId&quot;: &quot;274fbd08-5df0-4714-bd63-b0367e3a2a30&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Roikjaer/Onskeskyen.git",
+    "accountId": "7330b13e-0487-4364-92e4-2bb464fcf19e"
   }
-}</component>
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -186,6 +184,7 @@
       <workItem from="1775638732468" duration="1705000" />
       <workItem from="1775721582177" duration="29548000" />
       <workItem from="1776241224675" duration="2760000" />
+      <workItem from="1776326186688" duration="8316000" />
     </task>
     <task id="LOCAL-00001" summary="t1">
       <option name="closed" value="true" />

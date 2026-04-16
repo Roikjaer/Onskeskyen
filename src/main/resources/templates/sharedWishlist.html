@@ -2,49 +2,185 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title th:text="${profileUser.name} + 's ønskeliste'"></title>
+
     <style>
-        body { margin:0; font-family:Arial; background:linear-gradient(#1ca9c9,#e0f7ff); }
-        header { background:#0f6f8f; color:white; padding:15px; }
-        .container { padding:20px; }
-        .card { background:white; padding:12px; border-radius:10px; margin-bottom:10px; }
-        button { background:#0f6f8f; color:white; border:none; padding:6px 10px; border-radius:8px; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(180deg, #dff6ff 0%, #f8fdff 100%);
+
+            background-image:
+                    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.7) 60px, transparent 61px),
+                    radial-gradient(circle at 70% 20%, rgba(255,255,255,0.5) 80px, transparent 81px),
+                    radial-gradient(circle at 50% 70%, rgba(255,255,255,0.4) 120px, transparent 121px);
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            font-weight: bold;
+            font-size: 20px;
+            color: #0f6f8f;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        /* LOGO */
+        .logo {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 10px;
+            color: #0f6f8f;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .logo:hover {
+            background: rgba(79,195,220,0.25);
+            transform: scale(1.03);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0f6f8f;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #5a8a9a;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #0f6f8f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: rgba(0,0,0,0.08);
+            margin: 25px 0;
+        }
+
+        /* CARD */
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 16px;
+            border-radius: 18px;
+            margin-bottom: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+        }
+
+        .wish-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .wish-text {
+            font-size: 15px;
+            color: #2b4f5a;
+            flex: 1;
+        }
+
+        button {
+            background: linear-gradient(135deg, #4fc3dc, #0f6f8f);
+            color: white;
+            border: none;
+            padding: 7px 12px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .reserved-ok {
+            color: green;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .reserved-lock {
+            color: #888;
+            font-size: 13px;
+        }
+
+        .back {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .empty {
+            text-align: center;
+            color: #5a8a9a;
+        }
     </style>
 </head>
+
 <body>
 
-<header>☁️ Ønskeskyen</header>
+<header>
+    <a href="/wishes" class="logo">☁️ Ønskeskyen</a>
+</header>
 
 <div class="container">
 
-    <h1 th:text="${wishlist.name}"></h1>
-    <p>Af <span th:text="${profileUser.name}"></span></p>
+    <h1 th:text="${profileUser.name} + 's ønskeliste'"></h1>
 
-    <a href="/users">← Find flere ønskelister</a>
+    <div class="subtitle">
+        Se og reservér ønsker
+    </div>
+
+    <div class="back">
+        <a href="/users">← Tilbage</a>
+    </div>
 
     <hr>
 
-    <div th:if="${isOwner}" class="card">
-        <p style="color: gray;">Du ser din egen ønskeliste.</p>
-
-        <div th:each="w : ${wishes}" class="card">
-            <span th:text="${w.text}"></span>
-        </div>
+    <!-- EMPTY STATE -->
+    <div th:if="${wishes.isEmpty()}" class="card empty">
+        Ingen ønsker endnu ☁️
     </div>
 
-    <div th:if="${!isOwner}">
+    <!-- WISHES -->
+    <div th:each="w : ${wishes}" class="card">
 
-        <div th:if="${wishes.isEmpty()}" class="card">
-            <p>Ingen ønsker endnu.</p>
-        </div>
+        <div class="wish-row">
 
-        <div th:each="w : ${wishes}" class="card">
+            <div class="wish-text" th:text="${w.text}"></div>
 
-            <span th:text="${w.text}"></span>
-
+            <!-- LOGGED IN -->
             <div th:if="${currentUser != null}">
 
+                <!-- RESERVED BY USER -->
                 <div th:if="${w.reserved and w.reservedBy.id == currentUser.id}">
-                    <strong style="color:green;">✅ Du har reserveret</strong>
+                    <div class="reserved-ok">✅ Du har reserveret</div>
+
                     <form method="post" action="/wishes/unreserve">
                         <input type="hidden" name="id" th:value="${w.id}">
                         <input type="hidden" name="wishlistId" th:value="${wishlist.id}">
@@ -52,10 +188,12 @@
                     </form>
                 </div>
 
+                <!-- RESERVED BY SOMEONE ELSE -->
                 <div th:if="${w.reserved and w.reservedBy.id != currentUser.id}">
-                    🔒 Allerede reserveret
+                    <div class="reserved-lock">🔒 Allerede reserveret</div>
                 </div>
 
+                <!-- NOT RESERVED -->
                 <div th:if="${!w.reserved}">
                     <form method="post" action="/wishes/reserve">
                         <input type="hidden" name="id" th:value="${w.id}">
@@ -66,17 +204,24 @@
 
             </div>
 
-            <div th:if="${currentUser == null and w.reserved}">
-                🔒 Allerede reserveret
-            </div>
+            <!-- NOT LOGGED IN -->
+            <div th:if="${currentUser == null}">
 
-            <div th:if="${currentUser == null and !w.reserved}">
-                (<a href="/login">Log ind</a>)
+                <div th:if="${w.reserved}" class="reserved-lock">
+                    🔒 Allerede reserveret
+                </div>
+
+                <div th:if="${!w.reserved}">
+                    <a href="/login">Log ind for at reservere</a>
+                </div>
+
             </div>
 
         </div>
+
     </div>
 
 </div>
+
 </body>
 </html>

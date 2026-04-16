@@ -2,22 +2,114 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Login</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(180deg, #dff6ff 0%, #f8fdff 100%);
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #0f6f8f;
+        }
+
+        /* LOGO */
+        .logo {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 10px;
+            color: #0f6f8f;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .logo:hover {
+            background: rgba(79, 195, 220, 0.25);
+            transform: scale(1.03);
+        }
+
+        .logo:active {
+            background: rgba(79, 195, 220, 0.35);
+            transform: scale(0.98);
+        }
+
+        .logo.disabled {
+            cursor: default;
+            opacity: 0.9;
+        }
+
+        .container {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #0f6f8f;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.9);
+            padding: 25px;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            width: 220px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #4fc3dc, #0f6f8f);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        a {
+            color: #0f6f8f;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>Login</h1>
+<header>
+    <div class="logo disabled">☁️ Ønskeskyen</div>
+</header>
 
-<p th:if="${param.error}" style="color:red;">
-    Login fejlede – tjek email/password
-</p>
+<div class="container">
 
-<form method="post" action="/login">
-    <input type="text" name="username" placeholder="Email" required>
-    <input type="password" name="password" required>
-    <button type="submit">Login</button>
-</form>
+    <h1>Login</h1>
 
-<a href="/register">Opret bruger</a>
+    <p th:if="${param.error}" style="color:red;">Login fejlede</p>
+
+    <form method="post" action="/login" class="card">
+        <input type="text" name="username" placeholder="Email" required><br><br>
+        <input type="password" name="password" required><br><br>
+        <button type="submit">Login</button>
+    </form>
+
+    <br>
+    <a href="/register">Opret bruger</a>
+
+</div>
 
 </body>
 </html>

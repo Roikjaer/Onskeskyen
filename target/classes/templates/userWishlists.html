@@ -1,31 +1,136 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Ønskelister</title>
+    <title th:text="${profileUser.name} + 's ønskelister'"></title>
+
     <style>
-        body { margin:0; font-family:Arial; background:#e0f7ff; }
-        header { background:#0f6f8f; color:white; padding:15px; }
-        .container { padding:20px; }
-        .card { background:white; padding:10px; border-radius:8px; margin-bottom:8px; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+
+            /* Cloud theme */
+            background: linear-gradient(180deg, #dff6ff 0%, #f8fdff 100%);
+
+            background-image:
+                    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.6) 60px, transparent 61px),
+                    radial-gradient(circle at 70% 20%, rgba(255,255,255,0.5) 80px, transparent 81px),
+                    radial-gradient(circle at 50% 70%, rgba(255,255,255,0.4) 100px, transparent 101px);
+            background-repeat: no-repeat;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            color: #0f6f8f;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* LOGO */
+        .logo {
+            text-decoration: none;
+            color: #0f6f8f;
+            font-weight: bold;
+            padding: 6px 10px;
+            border-radius: 10px;
+            transition: 0.2s;
+            font-size: 18px;
+        }
+
+        .logo:hover {
+            background: rgba(79,195,220,0.25);
+            transform: scale(1.05);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #0f6f8f;
+        }
+
+        /* CARD */
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        /* BUTTON */
+        .btn {
+            background: #0f6f8f;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13px;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background: #0c5a73;
+        }
+
+        /* BACK LINK */
+        .back {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .back a {
+            color: #0f6f8f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
+
 <body>
 
-<header>☁️ Ønskeskyen</header>
+<header>
+    <a href="/wishes" class="logo">☁️ Ønskeskyen</a>
+</header>
 
 <div class="container">
 
-    <h1 th:text="${profileUser.name} + 's ønskelister'"></h1>
+    <h2 th:text="${profileUser.name} + 's ønskelister'"></h2>
 
-    <a href="/users">← Tilbage</a>
+    <div class="back">
+        <a href="/users">← Tilbage</a>
+    </div>
 
+    <!-- ORIGINAL FUNCTIONAL CONTENT -->
     <div th:each="wl : ${wishlists}" class="card">
-        <a th:href="@{/wishlist/{id}(id=${wl.id})}">
-            <span th:text="${wl.name}"></span>
+
+        <span th:text="${wl.name}"></span>
+
+        <a class="btn"
+           th:href="@{/wishlist/{id}(id=${wl.id})}">
+            Åbn
         </a>
-        (<span th:text="${wl.wishes.size()}"></span>)
+
     </div>
 
 </div>
+
 </body>
 </html>

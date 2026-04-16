@@ -2,29 +2,75 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Rediger ønske</title>
+
     <style>
-        body { margin:0; font-family:Arial; background:linear-gradient(#1ca9c9,#e0f7ff); }
-        header { background:#0f6f8f; color:white; padding:15px; }
-        .container { padding:20px; text-align:center; }
-        .card { background:white; padding:20px; border-radius:10px; display:inline-block; }
-        button { background:#0f6f8f; color:white; border:none; padding:8px 15px; border-radius:10px; }
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #dff6ff;
+        }
+
+        header {
+            background: rgba(255,255,255,0.6);
+            padding: 15px;
+            color: #0f6f8f;
+            font-weight: bold;
+        }
+
+        .logo {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        .logo:hover {
+            background: rgba(79,195,220,0.25);
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 12px;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #0f6f8f;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+        }
     </style>
 </head>
+
 <body>
 
-<header>☁️ Ønskeskyen</header>
+<header>
+    <a href="/wishes" class="logo">☁️ Ønskeskyen</a>
+</header>
 
 <div class="container">
-    <h1>Rediger ønske</h1>
+
+    <h2>Rediger ønske</h2>
 
     <form method="post" action="/wishes/edit" class="card">
         <input type="hidden" name="id" th:value="${wish.id}">
-        <input type="text" name="text" th:value="${wish.text}" required><br><br>
-        <button type="submit">Gem</button>
+        <input type="text" name="text" th:value="${wish.text}">
+        <button>Gem</button>
     </form>
 
-    <br><br>
-    <a th:href="@{/wishlists/{id}(id=${wish.wishlist.id})}">Tilbage</a>
 </div>
 
 </body>
