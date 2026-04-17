@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: onskeskyen
+    env: java
+    buildCommand: mvn clean package
+    startCommand: java -jar target/Onskeskyen-0.0.1-SNAPSHOT.jar
