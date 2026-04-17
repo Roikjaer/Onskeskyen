@@ -1,1 +1,11 @@
-/Users/maltheroikjaer/IdeaProjects/Onskeskyen/src/main/java/com/example/onskeskyen/OnskeskyenApplication.java
+/Users/maltheroikjaer/IdeaProjects/Onskeskyen3/src/main/java/com/example/onskeskyen/Configs/SecurityConfig.java
+/Users/maltheroikjaer/IdeaProjects/Onskeskyen3/src/main/java/com/example/onskeskyen/Controller/Controller.java
+/Users/maltheroikjaer/IdeaProjects/Onskeskyen3/src/main/java/com/example/onskeskyen/Models/User.java
+/Users/maltheroikjaer/IdeaProjects/Onskeskyen3/src/main/java/com/example/onskeskyen/Models/Wish.java
+/Users/maltheroikjaer/IdeaProjects/Onskeskyen3/src/main/java/com/example/onskeskyen/Models/Wishlist.java
+/Users/maltheroikjaer/IdeaProjects/Onskeskyen3/src/main/java/com/example/onskeskyen/OnskeskyenApplication.java
+/Users/maltheroikjaer/IdeaProjects/Onskeskyen3/src/main/java/com/example/onskeskyen/Repos/UserRepository.java
+/Users/maltheroikjaer/IdeaProjects/Onskeskyen3/src/main/java/com/example/onskeskyen/Repos/WishRepository.java
+/Users/maltheroikjaer/IdeaProjects/Onskeskyen3/src/main/java/com/example/onskeskyen/Repos/WishlistRepository.java
+/Users/maltheroikjaer/IdeaProjects/Onskeskyen3/src/main/java/com/example/onskeskyen/Services/DetailsService.java
+/Users/maltheroikjaer/IdeaProjects/Onskeskyen3/src/main/java/com/example/onskeskyen/Services/UserService.java
