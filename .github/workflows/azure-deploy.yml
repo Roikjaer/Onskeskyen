@@ -1,32 +1,28 @@
-name: CI/CD Pipeline
+name: Deploy to Azure
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 🔹 Hent kode
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      # 🔹 Java setup
-      - name: Set up JDK 17
+      - name: Setup Java
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
           distribution: 'temurin'
-          cache: maven
+          java-version: '17'
 
-      # 🔹 Build JAR (skip tests)
-      - name: Build JAR
+      - name: Build JAR (skip tests)
         run: ./mvnw clean package -DskipTests
 
-      # 🔹 Deploy til Azure
-      - name: Deploy to Azure Web App
+      - name: Deploy to Azure
         uses: azure/webapps-deploy@v3
         with:
           app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
