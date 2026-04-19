@@ -1,1 +1,11 @@
+com/example/onskeskyen/Models/Wish.class
+com/example/onskeskyen/Models/User.class
+com/example/onskeskyen/Models/Wishlist.class
+com/example/onskeskyen/Repos/WishRepository.class
+com/example/onskeskyen/Services/UserService.class
+com/example/onskeskyen/Services/DetailsService.class
 com/example/onskeskyen/OnskeskyenApplication.class
+com/example/onskeskyen/Configs/SecurityConfig.class
+com/example/onskeskyen/Controller/Controller.class
+com/example/onskeskyen/Repos/UserRepository.class
+com/example/onskeskyen/Repos/WishlistRepository.class

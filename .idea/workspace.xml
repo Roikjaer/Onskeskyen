@@ -4,26 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5352bb7b-c28a-40ec-8351-bd8ffe39e595" name="Changes" comment="Kæmpe_Update3">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Repos/WishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/onskeskyen/Repos/WishRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editWish.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editWish.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/myWishlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/myWishlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sharedWishlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/sharedWishlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userWishlists.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userWishlists.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/wishes.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/wishes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/editWish.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/editWish.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/myWishlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/myWishlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/sharedWishlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/sharedWishlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/userWishlists.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/userWishlists.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/wishes.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/wishes.html" afterDir="false" />
+    <list default="true" id="5352bb7b-c28a-40ec-8351-bd8ffe39e595" name="Changes" comment="fixed workflow">
+      <change afterPath="$PROJECT_DIR$/ender.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render.yaml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +16,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
+        <option value="GitHub Workflow" />
       </list>
     </option>
   </component>
@@ -50,7 +34,7 @@
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/Roikjaer/Onskeskyen.git",
-    "accountId": "7330b13e-0487-4364-92e4-2bb464fcf19e"
+    "accountId": "274fbd08-5df0-4714-bd63-b0367e3a2a30"
   }
 }]]></component>
   <component name="MavenImportPreferences">
@@ -68,43 +52,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.OnskeskyenApplication.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JUnit.OnskeskyenApplicationTests.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Onskeskyen [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Onskeskyen [install].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.OnskeskyenApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.Run.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/maltheroikjaer/IdeaProjects/Onskeskyen&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.AIAssistantPromptsLibrary&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.OnskeskyenApplication.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JUnit.OnskeskyenApplicationTests.executor": "Run",
+    "JUnit.UserTest.settersAndGettersWork.executor": "Run",
+    "Maven.Onskeskyen [clean].executor": "Run",
+    "Maven.Onskeskyen [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.OnskeskyenApplication.executor": "Run",
+    "Spring Boot.Run.executor": "Run",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/maltheroikjaer/IdeaProjects/Onskeskyen",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "ml.llm.AIAssistantPromptsLibrary",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\grans\IdeaProjects\Onskeskyen1\src\main\java\com\example\onskeskyen" />
@@ -116,7 +102,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.OnskeskyenApplication">
+  <component name="RunManager" selected="JUnit.UserTest.settersAndGettersWork">
     <configuration name="OnskeskyenApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <envs>
         <env name="DB_USER" value="adminLogin" />
@@ -143,6 +129,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserTest.settersAndGettersWork" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Onskeskyen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.onskeskyen.Models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.onskeskyen.Models" />
+      <option name="MAIN_CLASS_NAME" value="com.example.onskeskyen.Models.UserTest" />
+      <option name="METHOD_NAME" value="settersAndGettersWork" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Run" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <envs>
         <env name="DB_USER" value="adminLogin" />
@@ -156,11 +158,13 @@
     </configuration>
     <list>
       <item itemvalue="Application.OnskeskyenApplication" />
+      <item itemvalue="JUnit.UserTest.settersAndGettersWork" />
       <item itemvalue="JUnit.OnskeskyenApplicationTests" />
       <item itemvalue="Spring Boot.Run" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserTest.settersAndGettersWork" />
         <item itemvalue="JUnit.OnskeskyenApplicationTests" />
       </list>
     </recent_temporary>
@@ -185,6 +189,7 @@
       <workItem from="1775721582177" duration="29548000" />
       <workItem from="1776241224675" duration="2760000" />
       <workItem from="1776326186688" duration="8316000" />
+      <workItem from="1776412009132" duration="4218000" />
     </task>
     <task id="LOCAL-00001" summary="t1">
       <option name="closed" value="true" />
@@ -242,7 +247,39 @@
       <option name="project" value="LOCAL" />
       <updated>1776069444897</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fixed workflow">
+      <option name="closed" value="true" />
+      <created>1776419418046</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1776419418046</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fixed workflow">
+      <option name="closed" value="true" />
+      <created>1776419842534</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1776419842534</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fixed workflow">
+      <option name="closed" value="true" />
+      <created>1776420055223</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1776420055223</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fixed workflow">
+      <option name="closed" value="true" />
+      <created>1776422093114</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1776422093114</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,7 +308,9 @@
     <MESSAGE value="Kæmpe_Update" />
     <MESSAGE value="Kæmpe_Update2" />
     <MESSAGE value="Kæmpe_Update3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kæmpe_Update3" />
+    <MESSAGE value="Added workflow and servicetest" />
+    <MESSAGE value="fixed workflow" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed workflow" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
