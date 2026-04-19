@@ -19,9 +19,6 @@ public class SecurityConfig {
         this.detailsService = detailsService;
     }
 
-
-
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
@@ -30,7 +27,6 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/login", "/register", "/wishlist/**").permitAll()
                         .anyRequest().authenticated()
-
 
                 )
                 .formLogin(form -> form

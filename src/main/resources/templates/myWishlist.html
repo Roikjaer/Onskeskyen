@@ -156,7 +156,7 @@
         <a href="/wishes">← Tilbage</a>
     </div>
 
-    <!-- ADD WISH -->
+
     <form method="post"
           th:action="@{/wishlists/{id}/add(id=${wishlist.id})}"
           class="card">
@@ -166,12 +166,11 @@
 
     </form>
 
-    <!-- EMPTY -->
+
     <div th:if="${wishes.isEmpty()}" class="empty">
         Du har ingen ønsker endnu ☁️
     </div>
 
-    <!-- WISH LIST -->
     <div th:each="w : ${wishes}" class="card">
 
         <div th:text="${w.text}"></div>

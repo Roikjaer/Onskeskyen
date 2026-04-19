@@ -26,7 +26,7 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
-        /* LOGO */
+
         .logo {
             display: inline-block;
             padding: 6px 10px;
@@ -76,7 +76,6 @@
             margin: 25px 0;
         }
 
-        /* CARD */
         .card {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
@@ -162,22 +161,22 @@
 
     <hr>
 
-    <!-- EMPTY STATE -->
+
     <div th:if="${wishes.isEmpty()}" class="card empty">
         Ingen ønsker endnu ☁️
     </div>
 
-    <!-- WISHES -->
+
     <div th:each="w : ${wishes}" class="card">
 
         <div class="wish-row">
 
             <div class="wish-text" th:text="${w.text}"></div>
 
-            <!-- LOGGED IN -->
+
             <div th:if="${currentUser != null}">
 
-                <!-- RESERVED BY USER -->
+
                 <div th:if="${w.reserved and w.reservedBy.id == currentUser.id}">
                     <div class="reserved-ok">✅ Du har reserveret</div>
 
@@ -188,12 +187,12 @@
                     </form>
                 </div>
 
-                <!-- RESERVED BY SOMEONE ELSE -->
+
                 <div th:if="${w.reserved and w.reservedBy.id != currentUser.id}">
                     <div class="reserved-lock">🔒 Allerede reserveret</div>
                 </div>
 
-                <!-- NOT RESERVED -->
+
                 <div th:if="${!w.reserved}">
                     <form method="post" action="/wishes/reserve">
                         <input type="hidden" name="id" th:value="${w.id}">
@@ -204,7 +203,6 @@
 
             </div>
 
-            <!-- NOT LOGGED IN -->
             <div th:if="${currentUser == null}">
 
                 <div th:if="${w.reserved}" class="reserved-lock">

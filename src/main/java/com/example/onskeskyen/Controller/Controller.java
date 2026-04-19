@@ -32,7 +32,6 @@ public class Controller {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    // ========== AUTH ==========
 
     @GetMapping("/register")
     public String registerPage() {
@@ -59,7 +58,6 @@ public class Controller {
         return "login";
     }
 
-    // ========== MY WISHLISTS (overview) ==========
 
     @GetMapping("/wishes")
     public String myWishlists(Model model) {
@@ -74,7 +72,6 @@ public class Controller {
         return "wishes";
     }
 
-    /** Create a new wishlist */
     @PostMapping("/wishlists/create")
     public String createWishlist(@RequestParam String name) {
 
@@ -89,7 +86,7 @@ public class Controller {
         return "redirect:/wishes";
     }
 
-    /** Delete a wishlist */
+
     @PostMapping("/wishlists/delete")
     public String deleteWishlist(@RequestParam Long id) {
 
@@ -103,16 +100,15 @@ public class Controller {
         return "redirect:/wishes";
     }
 
-    // ========== WISHES INSIDE A WISHLIST (owner view) ==========
 
-    /** View wishes in one of my wishlists */
+
     @GetMapping("/wishlists/{wishlistId}")
     public String viewMyWishlist(@PathVariable Long wishlistId, Model model) {
 
         Wishlist wishlist = wishlistRepository.findById(wishlistId).orElseThrow();
         User user = userService.getCurrentUser();
 
-        // Only the owner can use this view
+
         if (!wishlist.getUser().getId().equals(user.getId())) {
             return "redirect:/wishes";
         }
@@ -123,7 +119,7 @@ public class Controller {
         return "myWishlist";
     }
 
-    /** Add a wish to a wishlist */
+
     @PostMapping("/wishlists/{wishlistId}/add")
     public String addWish(@PathVariable Long wishlistId,
                           @RequestParam String text) {
@@ -145,7 +141,7 @@ public class Controller {
         return "redirect:/wishlists/" + wishlistId;
     }
 
-    /** Delete a wish */
+
     @PostMapping("/wishes/delete")
     public String deleteWish(@RequestParam Long id) {
 
@@ -161,7 +157,7 @@ public class Controller {
         return "redirect:/wishes";
     }
 
-    /** Edit wish page */
+
     @GetMapping("/wishes/edit")
     public String editPage(@RequestParam Long id, Model model) {
 
@@ -171,7 +167,7 @@ public class Controller {
         return "editWish";
     }
 
-    /** Update a wish */
+
     @PostMapping("/wishes/edit")
     public String updateWish(@RequestParam Long id,
                              @RequestParam String text) {
@@ -188,9 +184,7 @@ public class Controller {
         return "redirect:/wishes";
     }
 
-    // ========== SHAREABLE LINK (public, no login required) ==========
 
-    /** Anyone with the link can view a wishlist */
     @GetMapping("/wishlist/{wishlistId}")
     public String sharedWishlist(@PathVariable Long wishlistId, Model model) {
 
@@ -200,16 +194,15 @@ public class Controller {
         model.addAttribute("wishes", wishRepository.findByWishlist(wishlist));
         model.addAttribute("profileUser", wishlist.getUser());
 
-        // Check if a user is logged in (for reserve functionality)
         User currentUser = null;
         try {
             currentUser = userService.getCurrentUser();
         } catch (Exception ignored) {
-            // Not logged in
+
         }
         model.addAttribute("currentUser", currentUser);
 
-        // Don't show reservation status if the viewer is the owner
+
         boolean isOwner = currentUser != null
                 && currentUser.getId().equals(wishlist.getUser().getId());
         model.addAttribute("isOwner", isOwner);
@@ -217,9 +210,8 @@ public class Controller {
         return "sharedWishlist";
     }
 
-    // ========== RESERVE / UNRESERVE ==========
 
-    /** Reserve a wish */
+
     @PostMapping("/wishes/reserve")
     public String reserveWish(@RequestParam Long id,
                               @RequestParam Long wishlistId) {
@@ -235,7 +227,6 @@ public class Controller {
         return "redirect:/wishlist/" + wishlistId;
     }
 
-    /** Unreserve a wish */
     @PostMapping("/wishes/unreserve")
     public String unreserveWish(@RequestParam Long id,
                                 @RequestParam Long wishlistId) {
@@ -251,7 +242,6 @@ public class Controller {
         return "redirect:/wishlist/" + wishlistId;
     }
 
-    // ========== SOCIAL: BROWSE USERS ==========
 
     @GetMapping("/users")
     public String usersPage(@RequestParam(required = false) String search, Model model) {
@@ -273,7 +263,7 @@ public class Controller {
         return "users";
     }
 
-    /** View another user's wishlists */
+
     @GetMapping("/users/{userId}/wishlists")
     public String viewUserWishlists(@PathVariable Long userId, Model model) {
 

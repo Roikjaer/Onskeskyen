@@ -8,7 +8,7 @@
             margin: 0;
             font-family: Arial, sans-serif;
 
-            /* Cloud theme */
+
             background: linear-gradient(180deg, #dff6ff 0%, #f8fdff 100%);
 
             background-image:
@@ -30,7 +30,7 @@
             font-size: 20px;
         }
 
-        /* LOGO */
+
         .logo {
             text-decoration: none;
             color: #0f6f8f;
@@ -68,7 +68,7 @@
             text-decoration: underline;
         }
 
-        /* SEARCH CARD */
+
         .search-card {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
@@ -107,7 +107,7 @@
             transform: scale(1.05);
         }
 
-        /* USER CARD */
+
         .user-card {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
@@ -168,18 +168,17 @@
 
     <h1>Find ønskelister</h1>
 
-    <!-- SEARCH -->
+
     <form method="get" action="/users" class="search-card">
         <input type="text" name="search" placeholder="Søg efter brugere...">
         <button>Søg</button>
     </form>
 
-    <!-- EMPTY -->
+
     <div th:if="${users.isEmpty()}" class="empty">
         Ingen brugere fundet ☁️
     </div>
 
-    <!-- USERS -->
     <div th:each="u : ${users}" class="user-card">
 
         <div>
